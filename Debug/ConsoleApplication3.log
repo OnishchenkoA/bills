@@ -1,0 +1,4 @@
+﻿  ConsoleApplication3.cpp
+c:\users\пользователь\documents\visual studio 2015\projects\consoleapplication3\consoleapplication3\consoleapplication3.cpp(1): warning C4627: #include <Windows.h>: пропущен при поиске использования предкомпилированного заголовка
+  c:\users\пользователь\documents\visual studio 2015\projects\consoleapplication3\consoleapplication3\consoleapplication3.cpp(1): note: Добавление директивы в "stdafx.h" или перестройка предкомпилированного заголовка
+  ConsoleApplication3.vcxproj -> C:\Users\пользователь\Documents\Visual Studio 2015\Projects\ConsoleApplication3\Debug\ConsoleApplication3.exe
