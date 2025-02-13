@@ -11,30 +11,36 @@ struct accounts
 	double balance;
 };
 
-void increment_balance(accounts& bal)
+void inc_balance(accounts& bal2)
 {
-	bal.balance++;
+	accounts acc;
+	std::cout << "¬ведите новый баланс:  ";
+	std::cin >> bal2.balance;
+	acc.balance = bal2.balance;
+	std::cout << std::endl;
 }
 
 int main(int argc, char** argv)
 {
 	setlocale(LC_ALL, "russian");
-	double bal2;
-	accounts acc;
+	int num;
+	std::string n;
+	double bal;
+	accounts acc1;
 	std::cout << "¬ведите номер счета:  ";
-	std::cin >> acc.number;
+	std::cin >> num;
 	std::cout << std::endl;
+	acc1.number = num;
 	std::cout << "¬ведите им€ владельца:  ";
-	std::cin >> acc.name;
+	std::cin >> n;
 	std::cout << std::endl;
+	acc1.name = n;
 	std::cout << "¬ведите баланс:  ";
-	std::cin >> acc.balance;
+	std::cin >> bal;
 	std::cout << std::endl;
-	std::cout << "¬ведите новый баланс:  ";
-	std::cin >> bal2;
-	acc.balance = bal2;
-	std::cout << std::endl;
-	std::cout << "¬аш счет:  " << acc.number << " " << acc.name << " " << acc.balance <<std::endl;
-
+	acc1.balance = bal;
+	inc_balance(acc1);
+	std::cout << "¬аш счет:  " << acc1.number << " " << acc1.name << " " << acc1.balance << std::endl;
+	return 0;
 }
 
