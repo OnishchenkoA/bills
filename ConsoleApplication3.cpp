@@ -12,13 +12,9 @@ struct accounts
 	double balance;
 };
 
-void inc_balance(accounts &bal, double bal1)
+void inc_balance(accounts *acc, double bal1)
 {
-	accounts acc;
-	std::cout << "¬ведите новый баланс:  ";
-	std::cin >> bal.balance;
-	acc.balance = bal.balance;
-	std::cout << std::endl;
+	acc -> balance = bal1;
 }
 
 int main(int argc, char** argv)
@@ -26,6 +22,7 @@ int main(int argc, char** argv)
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	setlocale(LC_ALL, "russian");
+	double new_bal;
 	accounts acc;
 	std::cout << "¬ведите номер счета:  ";
 	std::cin >> acc.number;
@@ -36,7 +33,10 @@ int main(int argc, char** argv)
 	std::cout << "¬ведите баланс:  ";
 	std::cin >> acc.balance;
 	std::cout << std::endl;
-	inc_balance(acc, acc.balance);
+	std::cout << "¬ведите новый баланс:  ";
+	std::cin >> new_bal;
+	std::cout << std::endl;
+	inc_balance(&acc, new_bal);
 	std::cout << "¬аш счет:  " << acc.number << " " << acc.name << " " << acc.balance << std::endl;
 	return 0;
 }
