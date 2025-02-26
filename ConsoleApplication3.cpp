@@ -1,7 +1,8 @@
-#include <Windows.h>
+
 #include "stdafx.h"
 #include <iostream>
 #include <string>
+#include <Windows.h>
 using namespace std;
 
 struct accounts 
@@ -11,36 +12,32 @@ struct accounts
 	double balance;
 };
 
-void inc_balance(accounts& bal2)
+void inc_balance(accounts &bal, double bal1)
 {
 	accounts acc;
 	std::cout << "¬ведите новый баланс:  ";
-	std::cin >> bal2.balance;
-	acc.balance = bal2.balance;
+	std::cin >> bal.balance;
+	acc.balance = bal.balance;
 	std::cout << std::endl;
 }
 
 int main(int argc, char** argv)
 {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	setlocale(LC_ALL, "russian");
-	int num;
-	std::string n;
-	double bal;
-	accounts acc1;
+	accounts acc;
 	std::cout << "¬ведите номер счета:  ";
-	std::cin >> num;
+	std::cin >> acc.number;
 	std::cout << std::endl;
-	acc1.number = num;
 	std::cout << "¬ведите им€ владельца:  ";
-	std::cin >> n;
+	std::cin >> acc.name;
 	std::cout << std::endl;
-	acc1.name = n;
 	std::cout << "¬ведите баланс:  ";
-	std::cin >> bal;
+	std::cin >> acc.balance;
 	std::cout << std::endl;
-	acc1.balance = bal;
-	inc_balance(acc1);
-	std::cout << "¬аш счет:  " << acc1.number << " " << acc1.name << " " << acc1.balance << std::endl;
+	inc_balance(acc, acc.balance);
+	std::cout << "¬аш счет:  " << acc.number << " " << acc.name << " " << acc.balance << std::endl;
 	return 0;
 }
 
